@@ -1,0 +1,30 @@
+<mat-drawer-container class="global-content">
+    <mat-drawer #drawer mode="side">
+      <a class="mat-button" [routerLink]="['/home']"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>Inicio</a><br>
+      <a class="mat-button" [routerLink]="['/clientes']"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>Clientes</a><br>
+      <a class="mat-button" [routerLink]="['/venta']"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>Venta</a><br>
+      <a class="mat-button" [routerLink]="['/producto']"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>Productos</a><br>
+      <a (click)="logout()" *ngIf="usuario" cl>Cerrar sesión</a>
+
+    </mat-drawer>
+
+
+    <p>
+      <mat-toolbar>
+       <button (click)="drawer.toggle();" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Menu</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    </p>
+
+    <!-- <div >
+      <button (click)="drawer.toggle();">Mostrar/Ocultar</button>
+      <router-outlet></router-outlet>
+    </div> -->
+  <app-footer></app-footer>
+
+</mat-drawer-container>
+
